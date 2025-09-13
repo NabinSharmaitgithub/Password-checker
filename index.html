@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Password Strength Checker — Matrix Red</title>
+  <link rel="stylesheet" href="css/style_hidden.css">
+</head>
+<body>
+  <!-- Matrix background -->
+  <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+
+  <!-- UI -->
+  <div class="container">
+    <div class="card">
+      <h1 class="title">Password<br/>Strength<br/>Checker</h1>
+<p class="tagline">Real-time strength check, <br />breach detection,<br /> and smart tips for safer credentials.</p>
+      <div class="input-wrap">
+        <input id="passwordInput" type="password" autocomplete="new-password" placeholder="Enter password">
+        <button id="toggleEye" class="eye-btn" aria-label="Show password">👁️</button>
+      </div>
+
+      <div class="strength-row">
+        <div class="strength-bar" aria-hidden="true">
+          <div id="strengthFill" class="strength-fill"></div>
+        </div>
+        <div id="strengthText" class="strength-text">Enter a password to check strength</div>
+      </div>
+
+      <div class="suggestions-card" aria-live="polite">
+        <div class="suggest-title">Suggestions</div>
+        <ul id="suggestions" class="suggestions-list">
+          <li class="placeholder">Type a password to see dynamic suggestions...</li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" class="btn">Generate</button>
+        <button id="checkPwned" class="btn muted">Check Breached</button>
+        <div id="pwnedResult" class="pwned-result" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/matrix.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
