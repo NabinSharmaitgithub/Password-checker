@@ -1,0 +1,166 @@
+/* style.css - Matrix red theme + responsive layout */
+
+:root{
+  --bg-black: #000;
+  --muted: #b6b6b6;
+  --accent-red: #ff3333;
+  --glass: rgba(255,255,255,0.02);
+  --card-bg: rgba(0,0,0,0.68);
+}
+
+/* Basic reset */
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ height:100%; }
+
+body{
+  font-family: "Courier New", "Roboto Mono", monospace;
+  background: black;
+  color: #fff;
+  overflow: auto;
+}
+
+/* Matrix canvas */
+#matrixCanvas{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: #000;
+}
+
+/* Center container */
+.container{
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Card */
+.card{
+  width: 100%;
+  max-width: 520px;
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 12px 40px rgba(255,0,0,0.06), 0 2px 10px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* Title */
+.title{
+  text-align: center;
+  color: var(--accent-red);
+  font-size: 42px;
+  line-height: 0.95;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+/* Input wrapper for eye button */
+.input-wrap{
+  position: relative;
+  margin-bottom: 14px;
+}
+.input-wrap input{
+  width: 100%;
+  padding: 14px 46px 14px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+.eye-btn{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--accent-red);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+/* Strength row */
+.strength-row{ display:flex; align-items:center; gap:12px; margin-bottom:12px; flex-wrap:wrap; }
+
+.strength-bar{
+  flex: 1 1 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.strength-fill{
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg,#ef4444,#f59e0b,#10b981);
+  transition: width 260ms ease, background 260ms ease, box-shadow 260ms ease;
+  box-shadow: 0 4px 22px rgba(255,0,0,0.06);
+}
+.strength-text{
+  width:100%;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top:6px;
+}
+
+/* Suggestions card */
+.suggestions-card{
+  margin-top:6px;
+  background: rgba(0,0,0,0.25);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+.suggest-title{ font-weight:700; color: var(--muted); margin-bottom:8px; }
+.suggestions-list{ list-style:none; display:block; gap:8px; }
+.suggestions-list li{
+  padding:8px 10px;
+  border-radius:8px;
+  color:#ddd;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.suggestions-list li.met{
+  color:#bff3d6;
+  text-decoration: none;
+  opacity: 0.95;
+}
+.suggestions-list li.notmet{
+  color:#f5b0b0;
+  opacity: 0.95;
+}
+.suggestions-list li .dot{ width:12px; text-align:center; font-weight:700; }
+
+/* Actions */
+.actions{ display:flex; gap:10px; margin-top:12px; align-items:center; flex-wrap:wrap; }
+.btn{
+  padding:8px 12px;
+  background: rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.04);
+  color:var(--muted);
+  border-radius:8px;
+  cursor:pointer;
+}
+.btn.muted{ color:#aaa; }
+.pwned-result{ font-size:13px; color:var(--muted); margin-left:6px; }
+
+/* small screens */
+@media (max-width:420px){
+  .title{ font-size:34px; }
+  .card{ padding:18px; border-radius:14px; }
+  .suggestions-list li{ font-size:13px; padding:6px; }
+}
