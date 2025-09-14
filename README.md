@@ -50,3 +50,6 @@ To deploy Password-checker run
 
 ## Creater
 The Password Checker website is created by [Nabin sharma](https://github.com/NabinSharmaitgithub/).
+
+##Releases
+[Password Checker](https://github.com/NabinSharmaitgithub/Password-checker/releases)
