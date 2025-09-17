@@ -1,5 +1,5 @@
 
-# Password checker 
+# CryptaWolf
 
 Password Checker is a small web application that helps users create stronger passwords by the help of suggestions 
 
