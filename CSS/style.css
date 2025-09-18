@@ -29,7 +29,6 @@ body{
   margin-left: 35%;
 }
 
-
 /* Matrix canvas */
 #matrixCanvas{
   position: fixed;
@@ -53,7 +52,7 @@ body{
 
 /* Card */
 .card{
-  width: 100%;
+  width: 90%;
   max-width: 520px;
   background: var(--card-bg);
   border-radius: 18px;
