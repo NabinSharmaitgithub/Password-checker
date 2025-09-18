@@ -17,7 +17,18 @@ body{
   background: black;
   color: #fff;
   overflow: auto;
+  .logo img {
+  width: 60px;
+  margin-bottom: 20px;
 }
+.logo img {
+  width: 30%;
+  margin-bottom: 0px;
+  position: center;
+  image-orientation: center;
+  margin-left: 35%;
+}
+
 
 /* Matrix canvas */
 #matrixCanvas{
